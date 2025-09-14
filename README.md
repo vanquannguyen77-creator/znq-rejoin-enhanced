@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 ZNQ Rejoin - Enhanced Roblox Auto-Rejoin Tool
 
 [![Platform](https://img.shields.io/badge/Platform-Android%20%2F%20Termux-brightgreen)]()
@@ -225,3 +226,7 @@ Distributed under MIT License. See `LICENSE` for more information.
 Made with ❤️ by ZNQ Team
 
 </div>
+=======
+# znq-rejoin-enhanced
+ZNQ Rejoin Enhanced - Roblox Auto Rejoin Tool
+>>>>>>> 553dcfd994da164e712e733c0ab7ce0e6b166073
