@@ -63,14 +63,21 @@ class GlobalState:
             return self._package_statuses.copy()
     
     def register_cleanup(self, handler):
-        self._cleanup_handlers.append(handler)
+        if handler not in self._cleanup_handlers:
+            self._cleanup_handlers.append(handler)
     
     def cleanup(self):
+        if hasattr(self, '_cleaning_up') and self._cleaning_up:
+            return  # Prevent recursion
+        
+        self._cleaning_up = True
         for handler in self._cleanup_handlers:
             try:
-                handler()
+                if callable(handler):
+                    handler()
             except Exception as e:
                 print(f"Error in cleanup handler: {e}")
+        self._cleaning_up = False
 
 # Global state instance
 state = GlobalState()
